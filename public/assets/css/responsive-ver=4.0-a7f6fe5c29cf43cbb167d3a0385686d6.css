@@ -24,6 +24,7 @@
 /*
 =============================================== 01. RETINA STYLES ===============================================
 */
+
 @media screen and (-webkit-min-device-pixel-ratio: 1.5) {
 	nav select {background-image: url(select-arrow@2x.png),  -webkit-linear-gradient(#FAFAFA, #f9f9f9 40%, #e8e8e8) !important;background: linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
 	background-image: -moz-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);background-position: center right; background-repeat: no-repeat; background-size:contain;}	
