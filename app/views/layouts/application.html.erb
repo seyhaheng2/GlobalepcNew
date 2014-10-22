@@ -15,8 +15,13 @@
 
 </head>
 <body class="home page page-id-21 page-template page-template-homepage-php">
+	<%= render 'layouts/header' %> 
+	<div id="main" class="site-main">
+	   <%= render 'layouts/sidebar' %>
+		<%= yield %>
+	</div>
+	<script type="text/javascript">jQuery(document).ready(function($){$('.flexslider').flexslider({animation:"fade",slideDirection:"horizontal",slideshow:false,slideshowSpeed:7000,animationDuration:200,directionNav:true,controlNav:true});});</script>
 
-<%= yield %>
 
 </body>
 </html>

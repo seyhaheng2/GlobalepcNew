@@ -9,6 +9,22 @@ group :production do
   gem 'rails_12factor'
 end
 
+
+gem 'carrierwave'
+gem 'better_errors'
+gem 'contact_us', '~> 0.5.1'
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+gem 'will_paginate', '~> 3.0'
+gem 'rmagick', :require => 'RMagick'
+gem 'pg_search'
+gem 'fog'
+gem 'aws-sdk'
+gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
+gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
+
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

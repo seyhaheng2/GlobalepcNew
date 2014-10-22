@@ -1,277 +1,47 @@
 
-
-
-
-            
-               <header>
-                  <div class="header-top">
-                     <div class="grid2column">
-                        <div class="menu-top-navigation-container">
-                           <ul id="menu-top-navigation" class="header-menu">
-                              <li id="menu-item-23" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-23"><a href="index.html">Home</a></li>
-                              <li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="short-codes/index.html">Short Codes</a></li>
-                              <li id="menu-item-24" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24"><a href="contact-us/index.html">Contact us</a></li>
-                           </ul>
-                        </div>
-                     </div>
-                     <div class="grid2column lastcolumn">
-                        <div class="social-icons"> <a class="rss" href="feed/index.html" target="_blank">r</a> <a class="facebook" href="http://facebook.com" target="_blank">F</a> <a class="twitter" href="https://twitter.com/Progression_S" target="_blank">t</a> <a class="skype" href="http://skype.com" target="_blank">s</a> <a class="linkedin" href="http://linkedin.com" target="_blank">l</a></div>
-                     </div>
-                     <div class="clearfix"></div>
+   <section id="content">
+      <div id="mason-layout" class="transitions-enabled fluid">
+         <% @posts.each do |post| %>
+            <div class="boxed-mason col2">
+               <div class="content-container ">
+                  <div class="featured-media">
+                     <%= image_tag post.image_url(:large),class: "attachment-progression-thumb-retina wp-post-image" %>
+                     <div class="media-overlay"> <span class="category-index"><a href="category/world-news/index.html" rel="category tag"><%#= post.category.name %></a></span></div>
+                     <div class="gradient-overlay"></div>
                   </div>
-                  <h1 id="logo"><a href="index.html" title="Bayside" rel="home"><img src="assets/logo.png" alt="Bayside" width="40" /></a></h1>
-                  <nav>
-                     <div class="menu-main-navigation-container">
-                        <ul id="menu-main-navigation" class="sf-menu">
-                           <li id="menu-item-26" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26"><a href="category/art/index.html">Art</a></li>
-                           <li id="menu-item-17" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17"><a href="category/world-news/index.html">World News</a></li>
-                           <li id="menu-item-12" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12"><a href="category/business/index.html">Business</a></li>
-                           <li id="menu-item-27" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27"><a href="category/health/index.html">Health</a></li>
-                           <li id="menu-item-16" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16"><a href="category/travel/index.html">Travel</a></li>
-                           <li id="menu-item-15" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15"><a href="category/technology/index.html">Technology</a></li>
-                           <li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-11">
-                              <a href="#">More</a>
-                              <ul class="sub-menu">
-                                 <li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><a href="fixed-navigation/index.html">Fixed Navigation</a></li>
-                                 <li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a href="latest-news/index.html">Blog Template</a></li>
-                                 <li id="menu-item-330" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-330"><a href="regular-pagination/index.html">Normal Pagination</a></li>
-                                 <li id="menu-item-331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-331"><a href="infinite-scroll/index.html">Infinite Scroll</a></li>
-                                 <li id="menu-item-209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-209"><a href="contact-us/index.html">Contact us</a></li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </div>
-                  </nav>
-                  <div class="clearfix"></div>
-               </header>
-               <div id="main" class="site-main">
-                  <div id="sidebar">
-                     <div class="sidebar-icon"><a href="#" class="sidebar-icon-link"></a></div>
-                     <form method="get" class="searchform" action="http://bayside.progressionstudios.com/" role="search"> <label for="s" class="assistive-text">Search</label> <input type="text" class="field" name="s" value="" id="s" placeholder="Search &hellip;" /> <input type="submit" class="submit button" name="submit" id="searchsubmit" value="Search" /></form>
-                     <div class="search-base"></div>
-                     <div class="sidebar-spacer search-base-spacer"></div>
-                     <div id="sidebar-widgets">
-                        <div id="lat-pop-widget-2" class="widget lat-pop">
-                           <div class="progression-tab-container">
-                              <ul class="progression-etabs">
-                                 <li class="progression-tab"><a href="#recent" class="recent-title">Recent</a></li>
-                                 <li class="progression-tab"><a href="#popular" class="popular-title">Featured</a></li>
-                              </ul>
-                              <div id="recent">
-                                 <ul class="recent-posts">
-                                    <li>
-                                       <a href="2013/02/nasa-launches-next-gen-landsat-spacecraft/index.html">
-                                          <div class="recent-post-image"><img width="300" height="208" src="assets/shutterstock_702132199-300x208.jpg" class="attachment-progression-sidebar wp-post-image" alt="shutterstock_702132199" /></div>
-                                          <h6>NASA Launches Next-Gen Landsat Spacecraft</h6>
-                                          <div class="time-stamp-sidebar">2 years ago</div>
+                  <div class="featured-summary">
+                     <h2><%= link_to post.name, home_show_path(id: post.id), data_disqus_dentifier:"myunique_page_identifier" %></h2>
+                     <p><%= truncate( raw( sanitize(post.description, :tags => %w(table tr td), :attributes => %w(id class style) ) ), :length => 130, :omission => "...") %></p>
+
+                     <div class="meta-data-index"> 
+                        <span class="time-posted-mini">
+                           <a href="2013/02/index.html">
+                              <% if post.created_at > Time.now.beginning_of_day %>
+                                 <%="#{time_ago_in_words(post.created_at)} ago"%> 
+                              <% else %> 
+                                 <%= post.created_at.strftime("%b %d, %Y") %>
+                              <% end %>
+                           </a>
+                    <!--     </span>
+
+                                                 <span class="comments-mini">
+                                       <a href="2013/02/nasa-launches-next-gen-landsat-spacecraft/index.html#comments" title="Comment on NASA Launches Next-Gen Landsat Spacecraft">
+                                          2
                                        </a>
-                                    </li>
-                                    <li>
-                                       <a href="2013/02/airline-offers-child-free-economy-class-on-some-flights/index.html">
-                                          <div class="recent-post-image"><img width="300" height="208" src="assets/shutterstock_105641378-300x208.jpg" class="attachment-progression-sidebar wp-post-image" alt="shutterstock_105641378" /></div>
-                                          <h6>Airline offers child-free economy class on some flights</h6>
-                                          <div class="time-stamp-sidebar">2 years ago</div>
-                                       </a>
-                                    </li>
-                                    <li>
-                                       <a href="2013/02/the-greatest-show-on-earth/index.html">
-                                          <div class="recent-post-image"><img width="300" height="208" src="assets/Isle-of-Man-TT-Motorcycle-Race-300x208.jpeg" class="attachment-progression-sidebar wp-post-image" alt="Isle-of-Man-TT-Motorcycle-Race" /></div>
-                                          <h6>The Greatest Show On Earth</h6>
-                                          <div class="time-stamp-sidebar">2 years ago</div>
-                                       </a>
-                                    </li>
-                                    <li>
-                                       <a href="2013/02/world-leaders-send-wishes-for-the-chinese-new-year/index.html">
-                                          <div class="recent-post-image"><img width="300" height="208" src="assets/shutterstock_125527118-300x208.jpg" class="attachment-progression-sidebar wp-post-image" alt="shutterstock_125527118" /></div>
-                                          <h6>World leaders send wishes for the Chinese New Year</h6>
-                                          <div class="time-stamp-sidebar">2 years ago</div>
-                                       </a>
-                                    </li>
-                                 </ul>
-                              </div>
-                              <div id="popular">
-                                 <ul class="recent-posts">
-                                    <li>
-                                       <a href="2013/02/california-skiing-far-from-the-mammoth-crowd-theres-china-peak/index.html">
-                                          <div class="recent-post-image"><img width="300" height="208" src="assets/photodune-1607300-woman-holding-snowboard-l-300x208.jpg" class="attachment-progression-sidebar wp-post-image" alt="Woman holding snowboard" /></div>
-                                          <h6>California skiing: Check out China Peak</h6>
-                                          <div class="time-stamp-sidebar">2 years ago</div>
-                                       </a>
-                                    </li>
-                                    <li>
-                                       <a href="2013/02/weekend-escape-to-chandler-ariz/index.html">
-                                          <div class="recent-post-image"><img width="300" height="208" src="assets/shutterstock_93531226-300x208.jpg" class="attachment-progression-sidebar wp-post-image" alt="shutterstock_93531226" /></div>
-                                          <h6>Weekend Escape to Chandler, Ariz.</h6>
-                                          <div class="time-stamp-sidebar">2 years ago</div>
-                                       </a>
-                                    </li>
-                                    <li>
-                                       <a href="2013/02/seaplane-adventures-tour/index.html">
-                                          <div class="recent-post-image"><img width="300" height="208" src="assets/seaplane-300x208.jpg" class="attachment-progression-sidebar wp-post-image" alt="seaplane" /></div>
-                                          <h6>Seaplane Adventures Tour</h6>
-                                          <div class="time-stamp-sidebar">2 years ago</div>
-                                       </a>
-                                    </li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="sidebar-spacer"></div>
-                        <div id="archives-3" class="widget widget_archive">
-                           <h5 class="widget-title">Archives</h5>
-                           <ul>
-                              <li><a href='2013/02/index.html'>February 2013</a></li>
-                              <li><a href='2013/01/index.html'>January 2013</a></li>
-                              <li><a href='2012/12/index.html'>December 2012</a></li>
-                              <li><a href='2012/11/index.html'>November 2012</a></li>
-                              <li><a href='2012/10/index.html'>October 2012</a></li>
-                           </ul>
-                        </div>
-                        <div class="sidebar-spacer"></div>
-                        <div id="text-2" class="widget widget_text">
-                           <h5 class="widget-title">Latest Tweets</h5>
-                           <div class="textwidget">
-                              <a class="twitter-timeline" href="https://twitter.com/Progression_S" data-widget-id="313702344938360833" data-chrome="noheader transparent">Tweets by @Progression_S</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                           </div>
-                        </div>
-                        <div class="sidebar-spacer"></div>
-                        <footer>
-                           <div id="copyright"> &copy; 2013 All Rights Reserved.<br>Developed by <a href="http://themeforest.net/user/ProgressionStudios/?ref=ProgressionStudios" target="_blank">Progression Studios</a>.</div>
-                        </footer>
+                        </span> -->
+
                      </div>
                   </div>
-                  <section id="content">
-                     <div id="mason-layout" class="transitions-enabled fluid">
-                        <div class="boxed-mason col2">
-                           <div class="content-container ">
-                              <div class="featured-media">
-                                 <a href="2013/02/nasa-launches-next-gen-landsat-spacecraft/index.html" class="hover-gradient " ><img width="550" height="365" src="assets/shutterstock_702132199-550x365.jpg" class="attachment-progression-thumb-retina wp-post-image" alt="shutterstock_702132199" /></a>
-                                 <div class="media-overlay"> <span class="category-index"><a href="category/world-news/index.html" rel="category tag">World News</a></span> <span class="post-type-icon"><a href="category/world-news/index.html" class="article-icon">article-icon</a></span></div>
-                                 <div class="gradient-overlay"></div>
-                              </div>
-                              <div class="featured-summary">
-                                 <h2><a href="2013/02/nasa-launches-next-gen-landsat-spacecraft/index.html">NASA Launches Next-Gen Landsat Spacecraft</a></h2>
-                                 <p>NASA on Monday successfully launched its new Landsat satellite from California&#8217;s Vandendberg Air Force Base, the space agency said.</p>
-                                 <div class="meta-data-index"> <span class="time-posted-mini"><a href="2013/02/index.html">2 years ago</a></span><span class="comments-mini"><a href="2013/02/nasa-launches-next-gen-landsat-spacecraft/index.html#comments" title="Comment on NASA Launches Next-Gen Landsat Spacecraft">2</a></span></div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="boxed-mason col2">
-                           <div class="content-container ">
-                              <div class="featured-media">
-                                 <a href="2013/02/airline-offers-child-free-economy-class-on-some-flights/index.html" class="hover-gradient " ><img width="550" height="366" src="assets/shutterstock_105641378-550x366.jpg" class="attachment-progression-thumb-retina wp-post-image" alt="shutterstock_105641378" /></a>
-                                 <div class="media-overlay"> <span class="category-index"><a href="category/business/index.html" rel="category tag">Business</a></span> <span class="post-type-icon"><a href="category/business/index.html" class="article-icon">article-icon</a></span></div>
-                                 <div class="gradient-overlay"></div>
-                              </div>
-                              <div class="featured-summary">
-                                 <h2><a href="2013/02/airline-offers-child-free-economy-class-on-some-flights/index.html">Airline offers child-free economy class on some flights</a></h2>
-                                 <p>Tired of rowdy, squawking kids when you fly? Well, one airline is offering a child-free zone, but it will cost you.</p>
-                                 <div class="meta-data-index"> <span class="time-posted-mini"><a href="2013/02/index.html">2 years ago</a></span><span class="comments-mini"><a href="2013/02/airline-offers-child-free-economy-class-on-some-flights/index.html#respond" title="Comment on Airline offers child-free economy class on some flights"><span class="leave-reply">0</span></a></span></div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="boxed-mason col2">
-                           <div class="content-container ">
-                              <div class="featured-media">
-                                 <a href="http://vimeo.com/46856767" class="hover-gradient video-pop-up" rel="prettyPhoto[gallery]"><img width="550" height="364" src="assets/Isle-of-Man-TT-Motorcycle-Race-550x364.jpeg" class="attachment-progression-thumb-retina wp-post-image" alt="Isle-of-Man-TT-Motorcycle-Race" /></a>
-                                 <div class="media-overlay"> <span class="category-index"><a href="category/art/index.html" rel="category tag">Art</a></span> <span class="post-type-icon"><a href="type/video/index.html" class="video-icon">video-icon</a></span></div>
-                                 <div class="gradient-overlay"></div>
-                              </div>
-                              <div class="featured-summary">
-                                 <h2><a href="2013/02/the-greatest-show-on-earth/index.html">The Greatest Show On Earth</a></h2>
-                                 <p>Isle of Man Time Trial</p>
-                                 <div class="meta-data-index"> <span class="time-posted-mini"><a href="2013/02/index.html">2 years ago</a></span><span class="comments-mini"><a href="2013/02/the-greatest-show-on-earth/index.html#comments" title="Comment on The Greatest Show On Earth">1</a></span></div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="boxed-mason col2">
-                           <div class="content-container ">
-                              <div class="featured-media">
-                                 <a href="2013/02/world-leaders-send-wishes-for-the-chinese-new-year/index.html" class="hover-gradient " ><img width="550" height="330" src="assets/shutterstock_125527118-550x330.jpg" class="attachment-progression-thumb-retina wp-post-image" alt="shutterstock_125527118" /></a>
-                                 <div class="media-overlay"> <span class="category-index"><a href="category/world-news/index.html" rel="category tag">World News</a></span> <span class="post-type-icon"><a href="category/world-news/index.html" class="article-icon">article-icon</a></span></div>
-                                 <div class="gradient-overlay"></div>
-                              </div>
-                              <div class="featured-summary">
-                                 <h2><a href="2013/02/world-leaders-send-wishes-for-the-chinese-new-year/index.html">World leaders send wishes for the Chinese New Year</a></h2>
-                                 <p>Global leaders are wishing the best for those celebrating the Chinese New Year and the beginning of the Year of the Snake.</p>
-                                 <div class="meta-data-index"> <span class="time-posted-mini"><a href="2013/02/index.html">2 years ago</a></span><span class="comments-mini"><a href="2013/02/world-leaders-send-wishes-for-the-chinese-new-year/index.html#respond" title="Comment on World leaders send wishes for the Chinese New Year"><span class="leave-reply">0</span></a></span></div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="boxed-mason col2">
-                           <div class="content-container ">
-                              <div class="featured-media">
-                                 <div class="flexslider">
-                                    <ul class="slides">
-                                       <li><a href="assets/shutterstock_22743616-1.jpg" rel="prettyPhoto[gallery]" class="hover-gradient"><img src="assets/shutterstock_22743616-1-550x347.jpg" alt="gallery-blog" /></a></li>
-                                       <li><a href="assets/shutterstock_2274361602.jpg" rel="prettyPhoto[gallery]" class="hover-gradient"><img src="assets/shutterstock_2274361602-550x347.jpg" alt="gallery-blog" /></a></li>
-                                       <li><a href="assets/shutterstock_22743616-3.jpg" rel="prettyPhoto[gallery]" class="hover-gradient"><img src="assets/shutterstock_22743616-3-550x347.jpg" alt="gallery-blog" /></a></li>
-                                    </ul>
-                                 </div>
-                                 <div class="media-overlay"> <span class="category-index"><a href="category/art/index.html" rel="category tag">Art</a></span> <span class="post-type-icon"><a href="type/gallery/index.html" class="photo-icon">photo-icon</a></span></div>
-                                 <div class="gradient-overlay"></div>
-                              </div>
-                              <div class="featured-summary">
-                                 <h2><a href="2013/02/art-gallery/index.html">Landscape Art Gallery</a></h2>
-                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                 <div class="meta-data-index"> <span class="time-posted-mini"><a href="2013/02/index.html">2 years ago</a></span><span class="comments-mini"><a href="2013/02/art-gallery/index.html#respond" title="Comment on Landscape Art Gallery"><span class="leave-reply">0</span></a></span></div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="boxed-mason col2">
-                           <div class="content-container advertisement-bayside"> <a href="http://themeforest.net/user/ProgressionStudios/?ref=ProgressionStudios" target="_blank"><img src="assets/advertisement2.gif" alt="advertisement"></a></div>
-                        </div>
-                        <div class="boxed-mason col2">
-                           <div class="content-container ">
-                              <div class="featured-media">
-                                 <a href="2013/02/australia-probes-apple-microsoft-adobe-over-high-prices/index.html" class="hover-gradient " ><img width="550" height="366" src="assets/shutterstock_120348208-550x366.jpg" class="attachment-progression-thumb-retina wp-post-image" alt="shutterstock_120348208" /></a>
-                                 <div class="media-overlay"> <span class="category-index"><a href="category/technology/index.html" rel="category tag">Technology</a></span> <span class="post-type-icon"><a href="category/technology/index.html" class="article-icon">article-icon</a></span></div>
-                                 <div class="gradient-overlay"></div>
-                              </div>
-                              <div class="featured-summary">
-                                 <h2><a href="2013/02/australia-probes-apple-microsoft-adobe-over-high-prices/index.html">Australia Probes Apple, Microsoft, Adobe Over High Prices</a></h2>
-                                 <p>Australian officials are looking into whether Apple, Microsoft, and Adobe charge too much for their products in the region.</p>
-                                 <div class="meta-data-index"> <span class="time-posted-mini"><a href="2013/02/index.html">2 years ago</a></span><span class="comments-mini"><a href="2013/02/australia-probes-apple-microsoft-adobe-over-high-prices/index.html#comments" title="Comment on Australia Probes Apple, Microsoft, Adobe Over High Prices">1</a></span></div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="boxed-mason col2">
-                           <div class="content-container ">
-                              <div class="featured-media">
-                                 <a href="2013/02/apple-is-testing-watch-like-device/index.html" class="hover-gradient " ><img width="550" height="366" src="assets/shutterstock_114007339-550x366.jpg" class="attachment-progression-thumb-retina wp-post-image" alt="shutterstock_114007339" /></a>
-                                 <div class="media-overlay"> <span class="category-index"><a href="category/technology/index.html" rel="category tag">Technology</a></span> <span class="post-type-icon"><a href="category/technology/index.html" class="article-icon">article-icon</a></span></div>
-                                 <div class="gradient-overlay"></div>
-                              </div>
-                              <div class="featured-summary">
-                                 <h2><a href="2013/02/apple-is-testing-watch-like-device/index.html">Apple Is Testing Watch-Like Device</a></h2>
-                                 <p>Apple reportedly is developing a &#8220;watch-like device&#8221;.</p>
-                                 <div class="meta-data-index"> <span class="time-posted-mini"><a href="2013/02/index.html">2 years ago</a></span><span class="comments-mini"><a href="2013/02/apple-is-testing-watch-like-device/index.html#respond" title="Comment on Apple Is Testing Watch-Like Device"><span class="leave-reply">0</span></a></span></div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="boxed-mason col2">
-                           <div class="content-container ">
-                              <div class="featured-media">
-                                 <a href="2013/02/5-of-credit-reports-contain-costly-errors-ftc/index.html" class="hover-gradient " ><img width="550" height="366" src="assets/shutterstock_105597614-550x366.jpg" class="attachment-progression-thumb-retina wp-post-image" alt="shutterstock_105597614" /></a>
-                                 <div class="media-overlay"> <span class="category-index"><a href="category/business/index.html" rel="category tag">Business</a></span> <span class="post-type-icon"><a href="category/business/index.html" class="article-icon">article-icon</a></span></div>
-                                 <div class="gradient-overlay"></div>
-                              </div>
-                              <div class="featured-summary">
-                                 <h2><a href="2013/02/5-of-credit-reports-contain-costly-errors-ftc/index.html">5% of Credit Reports Contain Costly Errors: FTC</a></h2>
-                                 <p>Five percent of U.S. consumers have an error on their credit report that &#8220;could lead to them paying more for products such as auto loans and insurance,&#8221; the Federal Trade Commission said Monday.</p>
-                                 <div class="meta-data-index"> <span class="time-posted-mini"><a href="2013/02/index.html">2 years ago</a></span><span class="comments-mini"><a href="2013/02/5-of-credit-reports-contain-costly-errors-ftc/index.html#comments" title="Comment on 5% of Credit Reports Contain Costly Errors: FTC">1</a></span></div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="clearfix"></div>
-                     </div>
-                     <script>jQuery(document).ready(function($){var $container=$('#mason-layout');$container.imagesLoaded(function(){$container.masonry({itemSelector:'.boxed-mason'});});$('#mason-layout').masonry({itemSelector:'.boxed-mason',columnWidth:294});$container.infinitescroll({navSelector:'#page-nav',nextSelector:'#page-nav a',itemSelector:'.boxed-mason',loading:{msgText:'Loading new posts...',finishedMsg:'No more posts to load.',img:'http://i.imgur.com/6RMhx.gif'}},function(newElements){var $newElems=$(newElements).css({opacity:0});$newElems.imagesLoaded(function(){$newElems.animate({opacity:1});$container.masonry('appended',$newElems,true);$("a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'fast',slideshow:5000,autoplay_slideshow:false,opacity:0.80,show_title:false,allow_resize:true,default_width:500,default_height:344,counter_separator_label:'/',theme:'pp_default',horizontal_padding:20,hideflash:false,wmode:'opaque',autoplay:false,modal:false,deeplinking:false,overlay_gallery:false,keyboard_shortcuts:true,ie6_fallback:true,social_tools:''});$('.flexslider').flexslider({animation:"fade",slideDirection:"horizontal",slideshow:false,slideshowSpeed:7000,animationDuration:200,directionNav:true,controlNav:true});});});$(window).unbind('.infscr');jQuery("#page-nav a").click(function(){jQuery('#mason-layout').infinitescroll('retrieve');return false;});$(document).ajaxError(function(e,xhr,opt){if(xhr.status==404)$('#page-nav a').remove();});});</script>
-                     <div class="load-more-manual">
-                        <nav id='page-nav'><a href='page/2/index.html'>Load more...</a></nav>
-                     </div>
-                     <div class="clearfix"></div>
-                  </section>
-                  <div class="clearfix"></div>
                </div>
-               <script type="text/javascript">jQuery(document).ready(function($){$('.flexslider').flexslider({animation:"fade",slideDirection:"horizontal",slideshow:false,slideshowSpeed:7000,animationDuration:200,directionNav:true,controlNav:true});});</script>
+            </div>
+          <% end %>
+         <div class="clearfix"></div>
+      </div>
+      <script>jQuery(document).ready(function($){var $container=$('#mason-layout');$container.imagesLoaded(function(){$container.masonry({itemSelector:'.boxed-mason'});});$('#mason-layout').masonry({itemSelector:'.boxed-mason',columnWidth:294});$container.infinitescroll({navSelector:'#page-nav',nextSelector:'#page-nav a',itemSelector:'.boxed-mason',loading:{msgText:'Loading new posts...',finishedMsg:'No more posts to load.',img:'http://i.imgur.com/6RMhx.gif'}},function(newElements){var $newElems=$(newElements).css({opacity:0});$newElems.imagesLoaded(function(){$newElems.animate({opacity:1});$container.masonry('appended',$newElems,true);$("a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'fast',slideshow:5000,autoplay_slideshow:false,opacity:0.80,show_title:false,allow_resize:true,default_width:500,default_height:344,counter_separator_label:'/',theme:'pp_default',horizontal_padding:20,hideflash:false,wmode:'opaque',autoplay:false,modal:false,deeplinking:false,overlay_gallery:false,keyboard_shortcuts:true,ie6_fallback:true,social_tools:''});$('.flexslider').flexslider({animation:"fade",slideDirection:"horizontal",slideshow:false,slideshowSpeed:7000,animationDuration:200,directionNav:true,controlNav:true});});});$(window).unbind('.infscr');jQuery("#page-nav a").click(function(){jQuery('#mason-layout').infinitescroll('retrieve');return false;});$(document).ajaxError(function(e,xhr,opt){if(xhr.status==404)$('#page-nav a').remove();});});</script>
+      <div class="load-more-manual">
+         <nav id='page-nav'><a href='page/2/index.html'>Load more...</a></nav>
+      </div>
+      <div class="clearfix"></div>
+   </section>
+   <div class="clearfix"></div>
 

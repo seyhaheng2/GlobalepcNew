@@ -1,0 +1,26 @@
+      <header>
+                  <h1 id="logo">
+                  <%= link_to (image_tag "logo1.png"), root_path %></h1>
+                  <nav>
+                     <div class="menu-main-navigation-container">
+                        <ul id="menu-main-navigation" class="sf-menu">
+                           <li id="menu-item-26" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26"><%= link_to "News", root_path %></li>
+                        <% @categories.each do |category| %>
+                           <li id="menu-item-26" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26">
+                              <%= link_to category.name, root_path(id: category.id) %>
+                           </li>
+                        <% end %>
+
+                           <li id="menu-item-11" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-11">
+                              <a href="#">Other</a>
+                              <ul class="sub-menu">
+                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><%= link_to "Service" %></li>
+                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><%= link_to "About"%></li>
+                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32"><%= link_to "Contact"%></li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </div>
+                  </nav>
+                  <div class="clearfix"></div>
+               </header>

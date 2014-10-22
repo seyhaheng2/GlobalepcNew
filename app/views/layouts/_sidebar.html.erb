@@ -1,0 +1,77 @@
+<div id="sidebar">
+   <div class="sidebar-icon"><a href="#" class="sidebar-icon-link"></a></div>
+      <%= form_tag root_path, method: :get, :id => "lesson_search",class: "searchform" do %>
+       <%= text_field_tag :query, params[:query], class: "field", placeholder: "Search ..." %>
+      <% end %>
+
+
+
+
+  <div class="search-base"></div>
+                 <div class="sidebar-spacer search-base-spacer"></div>
+                 <div id="sidebar-widgets">
+                    <div id="lat-pop-widget-2" class="widget lat-pop">
+                       <div class="progression-tab-container">
+                          <ul class="progression-etabs">
+                             <li class="progression-tab"><a href="#recent" class="recent-title">Recent</a></li>
+                             <li class="progression-tab"><a href="#popular" class="popular-title">Most Views</a></li>
+                          </ul>
+                          <div id="recent">
+                             <ul class="recent-posts">
+                             <% @recent_posts.each do |post| %>
+                                <li>
+                                <%= link_to home_show_path(id: post.id) do  %>
+                                      <div class="recent-post-image">
+                                      <%= image_tag post.image,class: "attachment-progression-sidebar wp-post-image", size: "300x208" %></div>
+                                      <h6><%= truncate(post.name, length: 35) %></h6>
+                                      <div class="time-stamp-sidebar">   
+                                        <% if post.created_at > Time.now.beginning_of_day %>
+                                          <%="#{time_ago_in_words(post.created_at)} ago"%> 
+                                        <% else %> 
+                                          <%= post.created_at.strftime("%b %d, %Y") %>
+                                        <% end %>
+                                      </div>
+                                <% end %>
+                                </li>
+                             <% end %>
+                             </ul>
+                          </div>
+                          <div id="popular">
+                             <ul class="recent-posts">
+                                <% @featured_posts.each do |post| %>
+                                <li>
+                                <%= link_to home_show_path(id: post.id) do %>
+                                      <div class="recent-post-image">
+                                      <%= image_tag post.image, class: "attachment-progression-sidebar wp-post-image", size: "300x208" %>
+                                      </div>
+                                      <h6><%= truncate(post.name, length: 35) %></h6>
+                                      <div class="time-stamp-sidebar">
+                                          <% if post.created_at > Time.now.beginning_of_day %>
+                                          <%="#{time_ago_in_words(post.created_at)} ago"%> 
+                                        <% else %> 
+                                          <%= post.created_at.strftime("%b %d, %Y") %>
+                                        <% end %>
+                                      </div>
+                                   <% end %>
+                                </li>
+                                <% end %>
+                             </ul>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="sidebar-spacer"></div>
+                    <div id="text-2" class="widget widget_text">
+                       <h5 class="widget-title">Advertisment</h5>
+                       <div class="textwidget">
+                          <% @advertise.each do |ads| %>
+                            <%= ads.name %>
+                            <%= image_tag ads.image %>
+                          <% end %>
+                       </div>
+                    </div>
+                    <div class="sidebar-spacer"></div>
+                    <footer>
+                       <div id="copyright"> &copy; 2014 All Rights Reserved.<br>Developed by <a href="http://themeforest.net/user/ProgressionStudios/?ref=ProgressionStudios" target="_blank">Splus</a>.</div>
+                    </footer>
+                 </div>
+</div>
