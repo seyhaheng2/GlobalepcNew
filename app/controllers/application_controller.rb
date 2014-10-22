@@ -11,10 +11,10 @@ class ApplicationController < ActionController::Base
   	
 
     ads_id = params[:id]
-    if ads_id
-      @advertise = Advertise.ads_of_category(ads_id)
+    if ads_id.present?
+      @adv = Advertise.ads_of_category(ads_id)
     else
-      @advertise = Advertise.all
+      @adv = Advertise.all
     end
   end
 end

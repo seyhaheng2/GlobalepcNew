@@ -773,7 +773,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul {left:10em; /* matc
 
 
 /* -------------------- B. DEMO SKIN -------------------- */
-nav {position:relative;  z-index:4; float:left;}
+nav {position:relative;  z-index:4; float:left;margin-left: 50px;}
 .sf-menu a {
 	 -webkit-transition: all .4s ease; -moz-transition: all .4s ease; transition: all .4s ease; -o-transition: all .4s ease;
 	text-decoration:none;

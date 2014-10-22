@@ -1,0 +1,66 @@
+
+<section id="page-content">
+
+   <div id="post-241" class="post-241 post type-post status-publish format-standard has-post-thumbnail hentry category-world-news tag-nasa tag-satellite tag-space-flight">
+      <h6 class="bayside-category"><%= link_to (@post.category.name) %></h6>
+      <h2 class="blog-post"><%= @post.name %></h2>
+      <div class="post-meta-bayside">
+      <span class="date-bayside">Posted on 
+         
+            <% if @post.created_at > Time.now.beginning_of_day %>
+               <%="#{time_ago_in_words(@post.created_at)} ago"%> 
+            <% else %> 
+               <%= @post.created_at.strftime("%b %d, %Y") %>
+            <% end %>
+         
+      </span>
+      </div>
+      <div class="featured-media" style="text-align:center;"> 
+        <%= image_tag @post.image, class: "attachment-progression-single wp-post-image" %>
+        <div class="control-desc" style="text-align:center;font-size:11px;padding-top:4px;color:#0099cc;text-transform:capitalize;">
+          <%= @post.imagedescription %>
+        </div>
+      </div>
+    
+      <div class="social-networks-bayside">
+         <script type="text/javascript">var switchTo5x=true;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:"b779a7d6-8947-431e-8a89-abe575e1b4b0"});</script>
+
+
+         <span class="st_print"><a href="javascript:window.print()">Print</a></span>
+         <div class="clearfix"></div>
+      </div>
+      <p><%= (@post.description).html_safe %></p>
+      <div class="clearfix"></div>
+      <hr>
+   </div>
+  
+   <div id="comments" class="comments-area">
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'globalepc'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+
+   
+   <div class="clearfix"></div>
+   </div>
+   <div class="clearfix"></div>
+</section>
+<div class="clearfix"></div>
+
+
+
+
+
+

@@ -13,7 +13,7 @@ ActiveAdmin.register Advertise do
   #   permitted << :other if resource.something?
   #   permitted
   # end
-  permit_params :name, :image, :category_id
+      permit_params :name, :image, :category_id
   index do
     column :id
     column :name 
@@ -23,6 +23,7 @@ ActiveAdmin.register Advertise do
     column :category
     actions
   end
+
 
 
 end

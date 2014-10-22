@@ -1,4 +1,4 @@
-ActiveAdmin.register Category do
+ActiveAdmin.register Category, as: "Menu" do
 
   permit_params :name, :position
   # See permitted parameters documentation:

@@ -6,7 +6,7 @@
                <div class="content-container ">
                   <div class="featured-media">
                      <%= image_tag post.image_url(:large),class: "attachment-progression-thumb-retina wp-post-image" %>
-                     <div class="media-overlay"> <span class="category-index"><a href="category/world-news/index.html" rel="category tag"><%#= post.category.name %></a></span></div>
+                     <div class="media-overlay"> <span class="category-index"><a href="category/world-news/index.html" rel="category tag"><%= post.category.name %></a></span></div>
                      <div class="gradient-overlay"></div>
                   </div>
                   <div class="featured-summary">
@@ -39,7 +39,7 @@
       </div>
       <script>jQuery(document).ready(function($){var $container=$('#mason-layout');$container.imagesLoaded(function(){$container.masonry({itemSelector:'.boxed-mason'});});$('#mason-layout').masonry({itemSelector:'.boxed-mason',columnWidth:294});$container.infinitescroll({navSelector:'#page-nav',nextSelector:'#page-nav a',itemSelector:'.boxed-mason',loading:{msgText:'Loading new posts...',finishedMsg:'No more posts to load.',img:'http://i.imgur.com/6RMhx.gif'}},function(newElements){var $newElems=$(newElements).css({opacity:0});$newElems.imagesLoaded(function(){$newElems.animate({opacity:1});$container.masonry('appended',$newElems,true);$("a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'fast',slideshow:5000,autoplay_slideshow:false,opacity:0.80,show_title:false,allow_resize:true,default_width:500,default_height:344,counter_separator_label:'/',theme:'pp_default',horizontal_padding:20,hideflash:false,wmode:'opaque',autoplay:false,modal:false,deeplinking:false,overlay_gallery:false,keyboard_shortcuts:true,ie6_fallback:true,social_tools:''});$('.flexslider').flexslider({animation:"fade",slideDirection:"horizontal",slideshow:false,slideshowSpeed:7000,animationDuration:200,directionNav:true,controlNav:true});});});$(window).unbind('.infscr');jQuery("#page-nav a").click(function(){jQuery('#mason-layout').infinitescroll('retrieve');return false;});$(document).ajaxError(function(e,xhr,opt){if(xhr.status==404)$('#page-nav a').remove();});});</script>
       <div class="load-more-manual">
-         <nav id='page-nav'><a href='page/2/index.html'>Load more...</a></nav>
+         <%= will_paginate @posts %>
       </div>
       <div class="clearfix"></div>
    </section>

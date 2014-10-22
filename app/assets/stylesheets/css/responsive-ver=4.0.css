@@ -49,6 +49,8 @@
 	
 }
 @media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5) {
+
+
 }
 
 /* IE7-IE8 Fixes*/
@@ -108,6 +110,7 @@ body:after {content: "959px to 1139px";background-color: hsla(270,60%,40%,0.7);}
 /* Note: Design for a width of 768px */
 
 @media only screen and (min-width: 768px) and (max-width: 959px) {
+
 body:after {content: "768 to 959px";background-color: hsla(270,60%,40%,0.7);}/* Notify what @media browser is using, Disable above by display:none; */ 
 
 /* Default Width */
@@ -161,6 +164,13 @@ body {background-image:none;}
 /* Note: Design for a width of 320px */
 
 @media only screen and (max-width: 767px) {
+	body header h1#logo img {
+height: auto;
+opacity: 1 !important;
+padding-top:17px;
+filter: alpha(opacity=100);
+}
+
 body:after {content: "0 to 480px"; background-color: hsla(90,60%,40%,0.7);}/* Notify what @media browser is using, Disable above by display:none; */ 
 
 

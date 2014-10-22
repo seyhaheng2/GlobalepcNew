@@ -14,7 +14,7 @@ ActiveAdmin.register Post do
   #   permitted
   # end
 
-  permit_params :name, :image, :description, :video, :category_id, :user_id, :imagedescription, :countclicks
+  permit_params :name, :image, :description, :video, :category_id, :user_id, :imagedescription, :countclick
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -36,9 +36,9 @@ ActiveAdmin.register Post do
     column :description do |desc|
       truncate(desc.description,length: 100)
     end
-    column :countclicks
+    column :countclick
     column :category_id do |cat|
-      # cat.category.name
+       cat.category.name
     end
 
     actions
@@ -56,7 +56,7 @@ ActiveAdmin.register Post do
   end
     f.actions
   end
-  
+
 
 
 end
