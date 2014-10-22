@@ -22,4 +22,6 @@
 .current{
 	padding:8px;
 }
-
+#page-content h1{
+	font-size: 24px;
+}

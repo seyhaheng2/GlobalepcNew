@@ -4,14 +4,14 @@ class HomeController < ApplicationController
     search = params[:query]
     if search.present?
       @posts = Post.text_search(search)
-        .paginate(:page => params[:page], :per_page => 6)
+        .paginate(:page => params[:page], :per_page => 12)
     else
       cate_id = params[:id]
       if cate_id
         @posts = Post.in_category(cate_id)
-          .paginate(:page => params[:page], :per_page => 6)
+          .paginate(:page => params[:page], :per_page => 12)
       else
-        @posts = Post.all.paginate(:page => params[:page], :per_page => 6)
+        @posts = Post.all.paginate(:page => params[:page], :per_page => 12)
       end
     end
   end
