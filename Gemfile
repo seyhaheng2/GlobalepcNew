@@ -9,7 +9,9 @@ group :production do
   gem 'rails_12factor'
 end
 
-
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem 'social-share-button', '~> 0.1.6'
+gem "social-buttons", '~> 0.3'
 gem 'carrierwave'
 gem 'better_errors'
 gem 'contact_us', '~> 0.5.1'
