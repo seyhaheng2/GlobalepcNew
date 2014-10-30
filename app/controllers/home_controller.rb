@@ -4,14 +4,14 @@ class HomeController < ApplicationController
     search = params[:query]
     if search.present?
       @posts = Post.order("created_at DESC").text_search(search)
-        .paginate(:page => params[:page], :per_page => 12)
+        .paginate(:page => params[:page], :per_page => 21)
     else
       cate_id = params[:id]
       if cate_id
         @posts = Post.in_category(cate_id).order("created_at DESC")
-          .paginate(:page => params[:page], :per_page => 12)
+          .paginate(:page => params[:page], :per_page => 21)
       else
-        @posts = Post.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
+        @posts = Post.order("created_at DESC").paginate(:page => params[:page], :per_page => 21)
       end
     end
   end
