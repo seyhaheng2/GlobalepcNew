@@ -11,7 +11,7 @@ class HomeController < ApplicationController
         @posts = Post.in_category(cate_id).order("created DESC")
           .paginate(:page => params[:page], :per_page => 12)
       else
-        @posts = Post.order("created DESC").paginate(:page => params[:page], :per_page => 12)
+        @posts = Post.paginate(:page => params[:page], :per_page => 12)
       end
     end
   end
