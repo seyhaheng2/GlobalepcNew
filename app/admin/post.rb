@@ -14,7 +14,7 @@ ActiveAdmin.register Post do
   #   permitted
   # end
 
-  permit_params :name, :image, :description, :video, :category_id, :user_id, :imagedescription, :countclick
+  permit_params :name, :image, :description, :video, :category_id, :user_id, :imagedescription, :countclick, :type_id
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -53,6 +53,7 @@ ActiveAdmin.register Post do
       f.input :video
       f.input :description, as: :wysihtml5, commands: :all
       f.input :category
+      f.input :type
   end
     f.actions
   end

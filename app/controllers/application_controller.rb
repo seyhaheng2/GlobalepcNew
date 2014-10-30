@@ -16,5 +16,9 @@ class ApplicationController < ActionController::Base
     else
       @adv = Advertise.all
     end
+
+
+      @typ = Type.all
   end
+
 end
