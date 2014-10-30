@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022034312) do
+ActiveRecord::Schema.define(version: 20141029101728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,10 +85,18 @@ ActiveRecord::Schema.define(version: 20141022034312) do
     t.integer  "countclick",       default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "type_id"
   end
 
   add_index "posts", ["category_id"], name: "index_posts_on_category_id", using: :btree
+  add_index "posts", ["type_id"], name: "index_posts_on_type_id", using: :btree
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "types", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
