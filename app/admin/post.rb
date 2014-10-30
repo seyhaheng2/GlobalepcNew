@@ -40,6 +40,9 @@ ActiveAdmin.register Post do
     column :category_id do |cat|
        cat.category.name
     end
+    column :type_id do |typ|
+      typ.type.name
+    end
 
     actions
   end
