@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   	@categories = Category.order(:position)
   	@recent_posts = Post.last(5)
     @featured_posts = Post.order(countclick: :desc).first(5)
-  	
+  	@types = Type.all
 
     ads_id = params[:id]
     if ads_id.present?
@@ -16,9 +16,6 @@ class ApplicationController < ActionController::Base
     else
       @adv = Advertise.all
     end
-
-
-      @typ = Type.all
   end
 
 end

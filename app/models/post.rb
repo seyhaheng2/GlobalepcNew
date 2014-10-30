@@ -9,6 +9,9 @@ class Post < ActiveRecord::Base
   scope :in_category, lambda{ |cate_id|
   	where("category_id = ?", cate_id)
   }
+  scope :in_type, lambda{ |type_id|
+    where("type_id = ?", type_id)
+  }
   
   pg_search_scope :search, against: [:name, :description],
 				  using: {tsearch: {dictionary: "english"}}

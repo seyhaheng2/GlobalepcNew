@@ -5,9 +5,9 @@
                      <div class="menu-main-navigation-container">
                         <ul id="menu-main-navigation" class="sf-menu">
                            <li id="menu-item-26" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26"><%= link_to "News", root_path %></li>
-                            <% @typ.each do |t| %>
+                            <% @types.each do |t| %>
                              <li id="menu-item-26" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26"> 
-                              <%= link_to t.name, root_path(id: t.id) %>   </li>
+                              <%= link_to t.name, root_path(type_id: t.id) %>   </li>
                             <% end %>
                          
                         <% @categories.each do |category| %>
